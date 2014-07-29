@@ -1,4 +1,4 @@
-# Omniauth::Rhomobile
+# OmniAuth::Rhomobile
 
 [![Gem Version](http://img.shields.io/gem/v/omniauth-rhomobile.svg)][gem]
 [![Build Status](http://img.shields.io/travis/rhomobile/omniauth-rhomobile.svg)][travis]
@@ -36,8 +36,12 @@ Or install it yourself as:
 Configuration is much the same as any other omniauth strategy.
 
     Rails.application.config.middleware.use OmniAuth::Builder do
-      provider :rhomobile, <your rhomobile client key>, <your rhomobile client secret>
+      provider :rhomobile, "APP_ID", "APP_SECRET"
     end
+
+With devise in your config/initializers/devise.rb:
+
+	config.omniauth :rhomobile, "APP_ID", "APP_SECRET"
 
 #### Read about Omniauth Usage
 
