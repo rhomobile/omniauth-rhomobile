@@ -11,7 +11,7 @@ describe OmniAuth::Strategies::Rhomobile do
   }
 
   let(:raw_info) {
-    { 'uid' => '123', 'email' => 'sample@rhomobile.com' }
+    { 'id' => '123', 'email' => 'sample@rhomobile.com' }
   }
 
   subject do
@@ -31,7 +31,7 @@ describe OmniAuth::Strategies::Rhomobile do
   describe '#client_options' do
     context "default options" do
       it 'has correct rhomobile site' do
-        expect(subject.client.site).to eq('https://sso.rhomobile.com')
+        expect(subject.client.site).to eq('https://accounts.rhomobile.com')
       end
 
       it 'has correct authorize url' do
@@ -94,7 +94,7 @@ describe OmniAuth::Strategies::Rhomobile do
       OAuth2::Client.new('abc', 'def') do |builder|
         builder.request :url_encoded
         builder.adapter :test do |stub|
-          stub.get('/me') {|env| [200, {'content-type' => 'application/json'}, '{"sub": "12345"}']}
+          stub.get('/profile') {|env| [200, {'content-type' => 'application/json'}, '{"sub": "12345"}']}
         end
       end
     end

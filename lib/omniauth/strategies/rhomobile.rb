@@ -7,10 +7,10 @@ module OmniAuth
 
       option :name, "rhomobile"
       option :client_options, {
-        site: 'https://sso.rhomobile.com'
+        site: 'https://accounts.rhomobile.com'
       }
 
-      uid { raw_info['uid'] }
+      uid { raw_info['id'] }
 
       info do
         { email: raw_info['email'] }
@@ -21,7 +21,12 @@ module OmniAuth
       end
 
       def raw_info
-        @raw_info ||= access_token.get("/me").parsed
+        url = '/profile'
+        params = {
+          'api_key'      => access_token.client.id,
+          'access_token' => access_token.token
+        }
+        @raw_info ||= access_token.get(url, params: params).parsed
       end
     end
   end
