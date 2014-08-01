@@ -14,6 +14,10 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+/pkg
+
+# Files
+Gemfile.lock
 
 # Mac finder artifacts
 .DS_Store
