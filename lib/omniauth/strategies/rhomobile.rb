@@ -17,7 +17,7 @@ module OmniAuth
       end
 
       extra do
-        { raw_info: raw_info }
+        raw_info
       end
 
       def raw_info

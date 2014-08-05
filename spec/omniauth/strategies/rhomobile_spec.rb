@@ -107,8 +107,8 @@ describe OmniAuth::Strategies::Rhomobile do
       expect(subject.extra).to be_a(Hash)
     end
 
-    it 'should have a raw_info key' do
-      expect(subject.extra.key?(:raw_info)).to eq(true)
+    it 'should have a sub key' do
+      expect(subject.extra.key?("sub")).to eq(true)
     end
   end
 end
