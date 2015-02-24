@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'omniauth', '~> 1.0'
   spec.add_dependency 'omniauth-oauth2', '~> 1.0'
   spec.add_development_dependency 'rspec', '~> 3.0.0'
-  spec.add_development_dependency 'simplecov'
-  spec.add_development_dependency 'webmock'
-  spec.add_development_dependency 'coveralls'
+  spec.add_development_dependency 'simplecov', '~> 0.9.2'
+  spec.add_development_dependency 'webmock', '~> 1.20.4'
+  spec.add_development_dependency 'coveralls', '~> 0.7.11'
 end
